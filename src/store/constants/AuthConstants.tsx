@@ -1,0 +1,10 @@
+export const authConstants = {
+    AUTH_REQUEST: 'AUTH_REQUEST',
+    AUTH_SUCCESS: 'AUTH_SUCCESS',
+    AUTH_FAILURE: 'AUTH_FAILURE',
+    
+    REG_REQUEST: 'REG_REQUEST',
+    REG_SUCCESS: 'REG_SUCCESS',
+    REG_FAILURE: 'REG_FAILURE',
+  }
+  

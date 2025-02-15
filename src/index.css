@@ -11,3 +11,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.swal2-icon-content-img {
+  /* padding-top: 0.5em; */
+  width: 130px;
+  height: 130px;
+}
