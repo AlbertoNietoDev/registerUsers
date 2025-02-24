@@ -7,10 +7,12 @@ import { useDispatch } from "react-redux";
 import { Auth } from "../../store/actions/AuthActions.tsx";
 import { cleanCache } from "../../utils/tools.tsx";
 import { Alert } from "../../components/Alert.tsx";
+import { useStyles } from "./loginStyles.tsx";
 
 const LoginPage: React.FC<any> = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const localStyles = useStyles();
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -25,7 +27,7 @@ const LoginPage: React.FC<any> = () => {
       saveAuthData(res?.user);
     } catch (error) {
       Alert({
-        props: { icon: { type: "error" }, title: "Error", text: error.message }
+        props: { icon: { type: "error" }, title: "Error", text: error.message },
       });
       // alert(error.message);
     }
@@ -48,29 +50,8 @@ const LoginPage: React.FC<any> = () => {
   };
 
   return (
-    <Stack
-      sx={{
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-        height: "100vh",
-        backgroundColor: "rgba(0,0,0,0.8)",
-        // backdropFilter: "blur(5px)",
-      }}
-    >
-      <Box
-        sx={{
-          display: "flex",
-          flexDirection: "column",
-          gap: "1rem",
-          border: "1px solid gray",
-          borderRadius: "1rem",
-          padding: "2rem",
-          minHeight: "20rem",
-          minWidth: "20rem",
-          backgroundColor: "#FAFAFA",
-        }}
-      >
+    <Stack className={localStyles.mainContainer}>
+      <Box className={localStyles.loginBox}>
         <TextField
           label={"Email"}
           type="email"

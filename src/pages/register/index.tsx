@@ -1,13 +1,15 @@
-import { Box, Button, Stack, TextField, Typography } from "@mui/material";
+import { Box, Button, Stack, TextField } from "@mui/material";
 import React, { useState } from "react";
 import { auth } from "../../firebase";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
+import { useStyles } from "./registerStyle.tsx";
 
 interface MyComponentProps {}
 
 export const RegisterPage: React.FC<MyComponentProps> = () => {
   const navigate = useNavigate();
+  const localStyles = useStyles();
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -38,29 +40,8 @@ export const RegisterPage: React.FC<MyComponentProps> = () => {
   };
 
   return (
-    <Stack
-      sx={{
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-        height: "100vh",
-        backgroundColor: "rgba(0,0,0,0.8)",
-        // backdropFilter: "blur(5px)",
-      }}
-    >
-      <Box
-        sx={{
-          display: "flex",
-          flexDirection: "column",
-          gap: "1rem",
-          border: "1px solid gray",
-          borderRadius: "1rem",
-          padding: "2rem",
-          minHeight: "20rem",
-          minWidth: "20rem",
-          backgroundColor: "#FAFAFA",
-        }}
-      >
+    <Stack className={localStyles.mainContainer}>
+      <Box className={localStyles.registerBox}>
         <TextField
           label={"Email"}
           type="email"

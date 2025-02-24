@@ -8,7 +8,7 @@ export const useStyles = makeStyles((theme: any) => ({
     height: "100vh",
     backgroundColor: "rgba(0,0,0,0.8)",
   },
-  loginBox: {
+  registerBox: {
     display: "flex",
     flexDirection: "column",
     gap: "1rem",
