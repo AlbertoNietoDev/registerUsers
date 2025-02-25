@@ -1,7 +1,7 @@
 import "./App.css";
 import storepersist from "./store/index";
 import { SnackbarProvider } from "notistack";
-import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import { HashRouter as Router, Navigate, Route, Routes } from "react-router-dom";
 import { Provider } from "react-redux";
 import { RegisterPage } from "./pages/register/index.tsx";
 import { Suspense } from "react";
@@ -21,7 +21,7 @@ function App() {
           horizontal: "right",
         }}
       >
-        <BrowserRouter basename={"/"}>
+        <Router basename={"/"}>
           <ThemeConfig>
             <Provider store={store}>
               <Routes>
@@ -39,7 +39,7 @@ function App() {
               </Routes>
             </Provider>
           </ThemeConfig>
-        </BrowserRouter>
+        </Router>
       </SnackbarProvider>
     </Suspense>
   );

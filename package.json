@@ -2,6 +2,7 @@
   "name": "register-users",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://albertonietodev.github.io/registerUsers",
   "dependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
@@ -35,6 +36,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -59,6 +62,7 @@
   },
   "devDependencies": {
     "@babel/preset-typescript": "^7.26.0",
+    "gh-pages": "^6.3.0",
     "typescript": "^5.7.3"
   }
 }
